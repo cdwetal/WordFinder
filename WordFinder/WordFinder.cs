@@ -13,6 +13,9 @@ namespace WordFinder
         private int _minWordLen;
         private int _maxWordLen;
 
+        public int MinWordLen => _minWordLen;
+        public int MaxWordLen => _maxWordLen;
+
         private enum Direction
         {
             Horizontal = 0,
@@ -108,23 +111,6 @@ namespace WordFinder
                 return Search(matrix, word, dir, currRow + 1, currCol, currWord);
             else
                 return Search(matrix, word, dir, currRow, currCol + 1, currWord);
-        }
-
-        public string PrintResult(Dictionary<string, bool> result)
-        {
-            var sb = new StringBuilder();
-            var shortBar = new string('-', _maxWordLen + 4);
-
-            sb.AppendLine($"|{shortBar}|---------|");
-            sb.AppendLine($"| {string.Format($"{{0,-{_maxWordLen + 3}}}", "Word")}| {string.Format("{0,-8}", "Found")}|");
-            sb.AppendLine($"|{shortBar}|---------|");
-            foreach (var word in result.Keys)
-            {
-                sb.AppendLine($"|{string.Format($"{{0,{_maxWordLen + 3}}}", word)} |{string.Format("{0, 8}", result[word].ToString())} |");
-            }
-            sb.Append($"|{shortBar}|---------|");
-
-            return sb.ToString();
         }
     }
 }

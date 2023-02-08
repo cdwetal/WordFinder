@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Text;
 
 var matrix = new char[,]
 {
@@ -63,7 +64,19 @@ try
     var result = wf.Search(matrix, words);
     sw.Stop();
 
-    Console.WriteLine(wf.PrintResult(result));
+    var sb = new StringBuilder();
+    var shortBar = new string('-', wf.MaxWordLen + 4);
+
+    sb.AppendLine($"|{shortBar}|---------|");
+    sb.AppendLine($"| {string.Format($"{{0,-{wf.MaxWordLen + 3}}}", "Word")}| {string.Format("{0,-8}", "Found")}|");
+    sb.AppendLine($"|{shortBar}|---------|");
+    foreach (var word in result.Keys)
+    {
+        sb.AppendLine($"|{string.Format($"{{0,{wf.MaxWordLen + 3}}}", word)} |{string.Format("{0, 8}", result[word].ToString())} |");
+    }
+    sb.Append($"|{shortBar}|---------|");
+
+    Console.WriteLine(sb.ToString());
     Console.WriteLine($"Time elapsed: {sw.ElapsedMilliseconds}ms");
 }
 catch (Exception ex)
