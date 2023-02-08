@@ -8,7 +8,9 @@ The Word Finder+ project contains three C#.NET projects:
 3. **WordFinder.Console** - The Word Finder+ console test application. This project contains a console application for testing Word Finder+.
 
 ## Using Word Finder+
-To use Word Finder+, simply reference to `WordFinder` project or the built `WordFinder.dll` file, create an instance of the `WordFinder` class, and call the `Search(char[,] matrix, string[] words)` function. For example: 
+> **_NOTE:_**  Because Word Finder+ targets .NET 6.0, the project solution must be built in Visual Studio 2022 or newer.
+
+To use Word Finder+, simply reference the `WordFinder` project or the built `WordFinder.dll` file, create an instance of the `WordFinder` class, and call the `Search(char[,] matrix, string[] words)` function. For example: 
 ``` c#
 var matrix = new char[,]
 {
@@ -30,7 +32,7 @@ var result = wf.Search(matrix, words);
 ```
 The result of the `Search` function is a `Dictionary<string, bool>` containing the words that were searched for and a boolean indicating if the word was found.
 
-An awaitable version of the `Search` is provided, if necessary, under the alias `SearchAsync`.
+An awaitable version of the `Search` function is provided, if necessary, under the alias `SearchAsync`.
 
 ## Unit Tests
 The `WordFinder.Test` project contains the following unit tests for the Word Finder+ code:
