@@ -52,7 +52,7 @@
             var validWords = wordList.Where(x => x.Length <= maxValidWordLen).Distinct();
             var invalidWords = wordList.Where(x => x.Length > maxValidWordLen).Distinct();
 
-            // Check valid wordList.
+            // Check valid word list.
             foreach (var word in validWords)
             {
                 var found = false;
@@ -79,7 +79,7 @@
                 result.Add(word, found);
             }
 
-            // Add entries in result for invalid wordList.
+            // Add entries in result for invalid word list.
             foreach (var word in invalidWords)
             {
                 result.Add(word, false);
