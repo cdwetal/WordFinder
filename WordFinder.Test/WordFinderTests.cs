@@ -1,6 +1,3 @@
-using System.Runtime.CompilerServices;
-using WordFinder;
-
 namespace WordFinder.Test
 {
     [TestClass]
