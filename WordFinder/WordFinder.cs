@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,8 +10,8 @@ namespace WordFinder
 {
     public class WordFinder
     {
-        private int _minWordLen = 3;
-        private int _maxWordLen = 10;
+        private int _minWordLen;
+        private int _maxWordLen;
 
         private enum Direction
         {
@@ -18,16 +19,12 @@ namespace WordFinder
             Vertical = 1
         }
 
-        public WordFinder() { }
-
-        public WordFinder(int minWordLen, int maxWordLen)
+        public WordFinder(int minWordLen = 3, int maxWordLen = 10)
         {
             _minWordLen = minWordLen;
             _maxWordLen = maxWordLen;
         }
 
-        // Note: this method is faster than RegEx, and excludes
-        // non-english characters (unlike char.IsLetter()). 
         private bool IsLetter(char x) => (x >= 'A' && x <= 'Z') || (x >= 'a' && x <= 'z');
         private bool IsLetters(string x) => x.All(y => IsLetter(y));
 
@@ -53,7 +50,8 @@ namespace WordFinder
 
             var result = new Dictionary<string, bool>();
 
-            // Filter out any words that are greater than the largest dimension of the array.
+            // Filter out any words that are greater than the largest dimension
+            // of the array. These words can never exist in the character matrix.
             var maxValidWordLen = matrix.GetLength(1) > matrix.GetLength(0) ? matrix.GetLength(1) : matrix.GetLength(0);
 
             var validWords = words.Where(x => x.Length <= maxValidWordLen).Distinct().ToArray();
@@ -78,15 +76,15 @@ namespace WordFinder
                             if (!found && matrix.GetLength(1) - col >= word.Length) 
                                 found |= Search(matrix, word, Direction.Horizontal, row, col);
                         }
-                        if (found) break; // Continue if word was found.
+                        if (found) break; // Break if word was found.
                     }
-                    if (found) break; // Continue if word was found.
+                    if (found) break; // Break if word was found.
                 }
 
                 result.Add(word, found);
             }
 
-            // Notify the user that the invalid words could not be found.
+            // Add entries in result for invalid words.
             foreach (var word in invalidWords)
             {
                 result.Add(word, false);
@@ -94,6 +92,8 @@ namespace WordFinder
 
             return result;
         }
+
+        public Task<Dictionary<string, bool>> SearchAsync(char[,] matrix, string[] words) => Task.Run(() => Search(matrix, words));
 
         private bool Search(char[,] matrix, string word, Direction dir, int currRow, int currCol, string currWord = "")
         {

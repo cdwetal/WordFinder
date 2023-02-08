@@ -8,6 +8,7 @@ namespace WordFinder.Test
 {
     internal static class TestData
     {
+        #region Valid Matrices
         public static char[,] Matrix = new char[,]
         {
             { 'U', 'S', 'I', 'M', 'M', 'L', 'E', 'C', 'J', 'J', 'Q', 'T', 'J', 'Q', 'C', 'P', 'N', 'Z', 'T', 'Z' },
@@ -31,7 +32,9 @@ namespace WordFinder.Test
             { 'H', 'V', 'T', 'P', 'A', 'B', 'G', 'U', 'F', 'N', 'U', 'B', 'G', 'Y', 'K', 'G', 'N', 'L', 'Y', 'S' },
             { 'K', 'X', 'H', 'Z', 'J', 'I', 'L', 'K', 'N', 'C', 'L', 'A', 'S', 'S', 'B', 'F', 'V', 'A', 'X', 'A' }
         };
+        #endregion
 
+        #region Valid Word Lists
         public static string[] WordsAllFound = new string[]
         {
             "cold",
@@ -43,19 +46,6 @@ namespace WordFinder.Test
             "instance",
             "way",
             "rock"
-        };
-
-        public static Dictionary<string, bool> WordsAllFoundResult = new Dictionary<string, bool>()
-        {
-            ["cold"] = true,
-            ["wind"] = true,
-            ["snow"] = true,
-            ["chill"] = true,
-            ["class"] = true,
-            ["interface"] = true,
-            ["instance"] = true,
-            ["way"] = true,
-            ["rock"] = true
         };
 
         public static string[] WordsAllFoundWithDuplicate = new string[]
@@ -73,20 +63,6 @@ namespace WordFinder.Test
             "rock"
         };
 
-
-        public static Dictionary<string, bool> WordsAllFoundWithDuplicateResult = new Dictionary<string, bool>()
-        {
-            ["cold"] = true,
-            ["wind"] = true,
-            ["snow"] = true,
-            ["chill"] = true,
-            ["class"] = true,
-            ["interface"] = true,
-            ["instance"] = true,
-            ["way"] = true,
-            ["rock"] = true
-        };
-
         public static string[] WordsNotAllFound = new string[]
         {
             "cold",
@@ -100,21 +76,6 @@ namespace WordFinder.Test
             "rock",
             "red",
             "blue"
-        };
-
-        public static Dictionary<string, bool> WordsNotAllFoundResult = new Dictionary<string, bool>()
-        {
-            ["cold"] = true,
-            ["wind"] = true,
-            ["snow"] = true,
-            ["chill"] = true,
-            ["class"] = true,
-            ["interface"] = true,
-            ["instance"] = true,
-            ["way"] = true,
-            ["rock"] = true,
-            ["red"] = false,
-            ["blue"] = false
         };
 
         public static string[] WordsNotAllFoundWithDuplicate = new string[]
@@ -134,6 +95,49 @@ namespace WordFinder.Test
             "red",
             "blue"
         };
+        #endregion
+
+        #region Valid Test Results
+        public static Dictionary<string, bool> WordsAllFoundResult = new Dictionary<string, bool>()
+        {
+            ["cold"] = true,
+            ["wind"] = true,
+            ["snow"] = true,
+            ["chill"] = true,
+            ["class"] = true,
+            ["interface"] = true,
+            ["instance"] = true,
+            ["way"] = true,
+            ["rock"] = true
+        };
+
+        public static Dictionary<string, bool> WordsAllFoundWithDuplicateResult = new Dictionary<string, bool>()
+        {
+            ["cold"] = true,
+            ["wind"] = true,
+            ["snow"] = true,
+            ["chill"] = true,
+            ["class"] = true,
+            ["interface"] = true,
+            ["instance"] = true,
+            ["way"] = true,
+            ["rock"] = true
+        };
+
+        public static Dictionary<string, bool> WordsNotAllFoundResult = new Dictionary<string, bool>()
+        {
+            ["cold"] = true,
+            ["wind"] = true,
+            ["snow"] = true,
+            ["chill"] = true,
+            ["class"] = true,
+            ["interface"] = true,
+            ["instance"] = true,
+            ["way"] = true,
+            ["rock"] = true,
+            ["red"] = false,
+            ["blue"] = false
+        };
 
         public static Dictionary<string, bool> WordsNotAllFoundWithDuplicateResult = new Dictionary<string, bool>()
         {
@@ -149,7 +153,9 @@ namespace WordFinder.Test
             ["red"] = false,
             ["blue"] = false
         };
+        #endregion
 
+        #region Invalid Matrices
         public static char[,] InvalidMatrix_NotSquare = new char[2, 3];
 
         public static char[,] InvalidMatrix_NotEnglishCharacters = new char[,]
@@ -158,7 +164,9 @@ namespace WordFinder.Test
             { '%', 'z', 'q' },
             { 'j', 'a', 'n' }
         };
+        #endregion
 
+        #region Invalid Word Lists
         public static string[] InvalidWordList_Empty = new string[] { };
 
         public static string[] InvalidWordList_InvalidWordLengthShort = new string[]
@@ -242,5 +250,6 @@ namespace WordFinder.Test
             "wayБ",
             "rock"
         };
+        #endregion
     }
 }
