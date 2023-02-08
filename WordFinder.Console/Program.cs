@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text;
 
-var matrix = new char[,]
+var characterMatrix = new char[,]
 {
     { 'U', 'S', 'I', 'M', 'M', 'L', 'E', 'C', 'J', 'J', 'Q', 'T', 'J', 'Q', 'C', 'P', 'N', 'Z', 'T', 'Z' },
     { 'V', 'T', 'O', 'O', 'T', 'G', 'R', 'C', 'B', 'A', 'W', 'A', 'Y', 'U', 'W', 'S', 'J', 'W', 'U', 'A' },
@@ -25,7 +25,7 @@ var matrix = new char[,]
     { 'K', 'X', 'H', 'Z', 'J', 'I', 'L', 'K', 'N', 'C', 'L', 'A', 'S', 'S', 'B', 'F', 'V', 'A', 'X', 'A' }
 };
 
-var words = new string[]
+var wordList = new string[]
 {
     "cold",
     "wind",
@@ -42,18 +42,18 @@ var words = new string[]
 
 try
 {
-    Console.WriteLine($"Attempting to find these words {string.Join(", ", words)} in the following matrix: ");
-    Console.WriteLine(new string('-', (matrix.GetLength(1) * 4) + 1));
-    for (int row = 0; row < matrix.GetLength(0); row++)
+    Console.WriteLine($"Attempting to find these words {string.Join(", ", wordList)} in the following matrix: ");
+    Console.WriteLine(new string('-', (characterMatrix.GetLength(1) * 4) + 1));
+    for (int row = 0; row < characterMatrix.GetLength(0); row++)
     {
         var line = "|";
-        for (int col = 0; col < matrix.GetLength(1); col++)
+        for (int col = 0; col < characterMatrix.GetLength(1); col++)
         {
-            line += $" {matrix[row, col]} |";
+            line += $" {characterMatrix[row, col]} |";
         }
         Console.WriteLine(line);
     }
-    Console.WriteLine(new string('-', (matrix.GetLength(1) * 4) + 1));
+    Console.WriteLine(new string('-', (characterMatrix.GetLength(1) * 4) + 1));
 
     Console.WriteLine("\nResult:");
 
@@ -61,7 +61,7 @@ try
 
     var sw = new Stopwatch();
     sw.Start();
-    var result = wf.Search(matrix, words);
+    var result = wf.Search(characterMatrix, wordList);
     sw.Stop();
 
     var sb = new StringBuilder();
