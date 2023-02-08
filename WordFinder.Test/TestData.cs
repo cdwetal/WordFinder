@@ -149,10 +149,10 @@
         };
         #endregion
 
-        #region Invalid Matrices
-        public static char[,] InvalidMatrix_NotSquare = new char[2, 3];
+        #region Invalid Character Matrices
+        public static char[,] InvalidCharacterMatrix_NotSquare = new char[2, 3];
 
-        public static char[,] InvalidMatrix_NotEnglishCharacters = new char[,]
+        public static char[,] InvalidCharacterMatrix_NotEnglishCharacters = new char[,]
         {
             { '1', 'a', '-' },
             { '%', 'z', 'q' },

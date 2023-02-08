@@ -45,7 +45,7 @@ namespace WordFinder.Test
 
             try
             {
-                var result = _wf.Search(TestData.InvalidMatrix_NotSquare, TestData.WordsAllFound);
+                var result = _wf.Search(TestData.InvalidCharacterMatrix_NotSquare, TestData.WordsAllFound);
             }
             catch (ArgumentException)
             {
@@ -62,7 +62,7 @@ namespace WordFinder.Test
 
             try
             {
-                var result = _wf.Search(TestData.InvalidMatrix_NotEnglishCharacters, TestData.WordsAllFound);
+                var result = _wf.Search(TestData.InvalidCharacterMatrix_NotEnglishCharacters, TestData.WordsAllFound);
             }
             catch (ArgumentException)
             {
