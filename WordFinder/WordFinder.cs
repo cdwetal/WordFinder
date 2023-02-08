@@ -46,7 +46,7 @@
             var result = new Dictionary<string, bool>();
 
             // Filter out any words that are greater than the largest dimension
-            // of the array. These words can never exist in the character matrix.
+            // of the matrix. These words can never exist in the character matrix.
             var maxValidWordLen = matrix.GetLength(1) > matrix.GetLength(0) ? matrix.GetLength(1) : matrix.GetLength(0);
 
             var validWords = words.Where(x => x.Length <= maxValidWordLen).Distinct().ToArray();
