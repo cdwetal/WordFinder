@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordFinder", "WordFinder\WordFinder.csproj", "{3BE7D5AD-9858-490C-8F6B-BB0B624D7FAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordFinder.Test", "WordFinder.Test\WordFinder.Test.csproj", "{4D23C4C5-6171-4C0B-A010-AB0202328609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordFinder.Console", "WordFinder.Console\WordFinder.Console.csproj", "{3AEF0ED5-2C01-4E20-8287-76E3C0542F87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BE7D5AD-9858-490C-8F6B-BB0B624D7FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BE7D5AD-9858-490C-8F6B-BB0B624D7FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BE7D5AD-9858-490C-8F6B-BB0B624D7FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BE7D5AD-9858-490C-8F6B-BB0B624D7FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D23C4C5-6171-4C0B-A010-AB0202328609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D23C4C5-6171-4C0B-A010-AB0202328609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D23C4C5-6171-4C0B-A010-AB0202328609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D23C4C5-6171-4C0B-A010-AB0202328609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AEF0ED5-2C01-4E20-8287-76E3C0542F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AEF0ED5-2C01-4E20-8287-76E3C0542F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AEF0ED5-2C01-4E20-8287-76E3C0542F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AEF0ED5-2C01-4E20-8287-76E3C0542F87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEF3705E-7CE6-44E2-8A58-BF577BD04E28}
+	EndGlobalSection
+EndGlobal
