@@ -25,7 +25,7 @@
 
         public Dictionary<string, bool> Search(char[,] characterMatrix, string[] wordList)
         {
-            // Validate character characterMatrix
+            // Validate character matrix
             // - Must be non-null
             // - Must be square
             // - Must only contain english characters
