@@ -5,7 +5,7 @@ Word Finder+ exercise for Synapse Health
 The Word Finder+ project contains three C#.NET projects:
 1. **WordFinder** - The Word Finder+ class library. This project contains the main Word Finder+ code.
 2. **WordFinder.Test** - The Word Finder+ unit test project. This project contains all of the unit tests for Word Finder+.
-3. **WordFinder.Console** - The Word Finder+ console test application. This project contains a console application for testing Word Finder+.
+3. **WordFinder.Console** - The Word Finder+ console test application. This project contains a console application for testing Word Finder+. Set this project as the startup project in Visual Studio to run the console application.
 
 ## Using Word Finder+
 > **_NOTE:_**  Because Word Finder+ targets .NET 6.0, the project solution must be built in Visual Studio 2022 or newer.
