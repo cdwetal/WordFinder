@@ -36,7 +36,7 @@
             // Validate word list
             // - Must be non-null
             // - Must be non-empty
-            // - Must contain wordList that are greater than the character minimum and not greater than the character maximum defined above
+            // - Must contain words that are greater than the character minimum and not greater than the character maximum defined above
             // - Must contain only english characters
             if (wordList == null) throw new ArgumentNullException("Invalid word list: word list must not be null.");
             if (wordList.Length == 0) throw new ArgumentException("Invalid word list: word list must not be empty.");
@@ -45,8 +45,8 @@
 
             var result = new Dictionary<string, bool>();
 
-            // Filter out any wordList that are greater than the largest dimension
-            // of the characterMatrix. These wordList can never exist in the character characterMatrix.
+            // Filter out any words that are greater than the largest dimension
+            // of the character matrix. These words can never exist in the character character matrix.
             var maxValidWordLen = characterMatrix.GetLength(1) > characterMatrix.GetLength(0) ? characterMatrix.GetLength(1) : characterMatrix.GetLength(0);
 
             var validWords = wordList.Where(x => x.Length <= maxValidWordLen).Distinct();
@@ -57,7 +57,7 @@
             {
                 var found = false;
 
-                // Look for the first character of the word in the characterMatrix.
+                // Look for the first character of the word in the character matrix.
                 for (int row = 0; row < characterMatrix.GetLength(0); row++)
                 {
                     for (int col = 0; col < characterMatrix.GetLength(1); col++)
